@@ -128,12 +128,16 @@ void get_text(void)
 
 int search_str(char * inn)
 {
-	for (int i = 0; i < total_line; ++i)
+	int flag = -1;
+    for (int i = 0; i < total_line; ++i)
 	{
 		if(strstr(handled_text[i], inn)!=NULL)
-			return i;
+        {
+            flag = 0;
+			printf("%s\n", source_text[i]);
+        }
 	}
-	return -1;
+	return flag;
 
 }
 
